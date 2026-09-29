@@ -1,0 +1,4 @@
+interface:
+  display_name: "Publish Shift Calendar"
+  short_description: "Maintain shift calendars and Apple Calendar feeds"
+  default_prompt: "Use this skill to add, correct, or publish dated shift calendar files."
