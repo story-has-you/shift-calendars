@@ -15,8 +15,8 @@ description: Maintain this project's Apple Calendar shift feeds from schedule im
 
 ## 更新文件
 
-- 分期文件使用 `schedules/<person-slug>-YYYYMMDD-YYYYMMDD.ics`。订阅文件汇总该人员所有已确认日期；更正已存在日期时替换该日事件，保留范围外事件。
-- 现有订阅路径 `subscriptions/pu-rong-calendar.ics` 是已发布的固定 URL。日历显示名现为 `Pu Kris`；仅改显示名时保留路径和已有事件 UID，以免订阅失效或产生重复事件。新人员另建独立订阅文件。
+- 分期文件使用 `schedules/<person-slug>-YYYYMMDD-YYYYMMDD.ics`。新增周期时，将分期文件中的事件追加到固定订阅文件 `subscriptions/pu-rong-calendar.ics` 的 `END:VCALENDAR` 之前；保留订阅文件已有的日历头和历史事件，不重建或覆盖整个文件。
+- 现有订阅路径 `subscriptions/pu-rong-calendar.ics` 是已发布的固定 URL。日历显示名现为 `Pu Kris`；仅改显示名时保留路径和已有事件 UID，以免订阅失效或产生重复事件。更正已存在日期时，按稳定 UID 替换该日事件并保留其他日期。新人员另建独立订阅文件。
 - 使用 `Asia/Shanghai`。班次生成有起止时间的事件；休息生成全天事件，结束日期为次日。每人每天一个稳定 UID；修改现有事件时沿用 UID，并更新 DTSTAMP 和 SEQUENCE。输出 UTF-8、CRLF 行尾，按 iCalendar 要求转义文字并折行。
 - 新一期加入后检查分期文件与订阅文件的对应日期、班次、事件数量和 UID；更新订阅文件时保留已确认的其他日期。
 
